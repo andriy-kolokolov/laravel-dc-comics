@@ -7,3 +7,5 @@ import.meta.glob([
 ]);
 
 import * as bootstrap from 'bootstrap';
+
+import './header'
