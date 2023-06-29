@@ -14,14 +14,9 @@
     &:hover {
         transition: .3s;
         border-bottom: 5px solid dodgerblue;
-
-        a {
-            color: dodgerblue;
-        }
     }
 
     &.active {
-        transition: 0s;
         border-bottom: 5px solid dodgerblue;
 
         a {

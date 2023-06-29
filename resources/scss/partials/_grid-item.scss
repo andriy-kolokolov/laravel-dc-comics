@@ -1,8 +1,11 @@
 
 .grid-item {
+
+
     .img-wrapper {
         max-width: 250px;
         aspect-ratio: 1 / 1.5;
+        cursor: pointer;
 
         img {
             width: 100%;
@@ -10,5 +13,19 @@
             object-fit: cover;
             object-position: center;
         }
+
+        &:hover {
+            img {
+                transition: .3s;
+                scale: 1.1;
+            }
+
+        }
+
+
+
+
     }
+
+
 }
