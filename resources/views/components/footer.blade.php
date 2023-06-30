@@ -1,6 +1,6 @@
 <div class="footer-wrapper">
     <div class="footer__top bg-primary p-5">
-        <div class="container row-cols-5">
+        <div class="container text-center row-cols-lg-2 row-cols-lg-3 row-cols-lg-4 row-cols-5">
             <a href="#" class="col footer__top__link text-white text-decoration-none">
                 <img src="{{ Vite::asset('/resources/img/buy-comics-digital-comics.png') }}" alt=""/>
                 <span class="link-title">DIGITAL COMICS</span>

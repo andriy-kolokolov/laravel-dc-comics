@@ -26,3 +26,10 @@
 - #### Populate table using seeder collecting data from config/comics.php:
     ```sh
     php artisan db:seed --class=ComicSeeder
+
+- #### Run npm and artisan:
+    - ```sh
+      php artisan serve
+    - ```sh
+      npm run dev
+      

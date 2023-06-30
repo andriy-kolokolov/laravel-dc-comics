@@ -2,8 +2,24 @@
 @use "partials/footer";
 @use "partials/variables";
 @use "partials/grid-item";
+
 @import "~bootstrap/scss/bootstrap";
 
-main {
-    background-color: #1c1c1c;
+// to fix empty square bug instead of fontawesome icons
+$fa-font-path: "/node_modules/@fortawesome/fontawesome-free/webfonts";
+
+@import '/node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import '/node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import '/node_modules/@fortawesome/fontawesome-free/scss/regular';
+@import '/node_modules/@fortawesome/fontawesome-free/scss/brands';
+
+
+body {
+    overflow-x: hidden;
+
+    main {
+        background-color: #1c1c1c;
+    }
 }
+
+
