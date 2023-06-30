@@ -7,12 +7,12 @@
     @vite('resources/js/app.js')
 </head>
 <body>
-    @include('components.header')
-    <main>
-        <div class="container">
-            @yield('content')
-        </div>
-    </main>
-
+@include('components.header')
+<main class="mt-4">
+    <div class="container">
+        @yield('content')
+    </div>
+</main>
+@include('components.footer')
 </body>
 </html>

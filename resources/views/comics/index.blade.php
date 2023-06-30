@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-    <div class="row justify-content-center g-4">
+    <div class="row justify-content-center g-4 text-white">
         @foreach ($comics as $comic)
             <div class="col-lg-2 col-md-3 col-sm-4 col-6">
                 <div class="grid-item">
