@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. Now create.blade.php something great!
 |
 */
 
@@ -20,6 +20,15 @@ Route::get('/', function () {
 
 Route::get('/comics', [ComicsController::class, 'index'])->name('comics');
 
+Route::get('comics', [ComicsController::class, 'index'])->name('comics.index'); // Index
+
+// Additional routes for CRUD operations:
+Route::get('comics/create', [ComicsController::class, 'create'])->name('comics.create'); // Create
+Route::post('comics', [ComicsController::class, 'store'])->name('comics.store'); // Store
+Route::get('comics/{id}', [ComicsController::class, 'show'])->name('comics.show'); // Show
+Route::get('comics/{id}/edit', [ComicsController::class, 'edit'])->name('comics.edit'); // Edit
+Route::put('comics/{id}', [ComicsController::class, 'update'])->name('comics.update'); // Update
+Route::delete('comics/{id}', [ComicsController::class, 'destroy'])->name('comics.destroy'); // Delete
 
 
 Route::group(['prefix' => ''], function () {

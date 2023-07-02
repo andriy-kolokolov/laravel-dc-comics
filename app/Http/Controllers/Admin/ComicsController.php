@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
+use App\Models\ComicArtist;
+use App\Models\Pasta;
 use Illuminate\Http\Request;
 
 class ComicsController extends Controller
@@ -15,7 +17,7 @@ class ComicsController extends Controller
      */
     public function index()
     {
-        $comics = Comic::paginate(5);
+        $comics = Comic::paginate(12);
         return view('comics.index', compact('comics'));
     }
 
@@ -26,7 +28,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -37,7 +39,32 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd($request);
+//        $request->validate([
+//            'title' => 'required',
+//            'description' => 'required',
+//            'thumb' => 'required|url',
+//            'price' => 'required',
+//            'series' => 'required',
+//            'sale_date' => 'required|date',
+//            'type' => 'required',
+//            'artists' => 'required|array',
+//            'writers' => 'required|array',
+//        ]);
+
+        $data = $request->all();
+
+        $comic = new Comic();
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->save();
+
+        return redirect()->route('comics.show', ['id' => $comic->id]);
     }
 
     /**
@@ -48,7 +75,8 @@ class ComicsController extends Controller
      */
     public function show($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        return view('comics.show', compact('comic'));
     }
 
     /**
