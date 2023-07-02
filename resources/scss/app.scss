@@ -22,6 +22,11 @@ body {
     }
 }
 
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .comic-show__img-wrapper {
 
     max-width: 300px;
@@ -35,3 +40,8 @@ body {
     }
 }
 
+.place-items-center {
+    height: 100vh;
+    display: flex;
+    place-items: center;
+}

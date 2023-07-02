@@ -8,7 +8,7 @@
 </head>
 <body>
 @include('components.nav')
-<div class="wrapper">
+<div class="main-wrapper">
     @yield('content')
 </div>
 
