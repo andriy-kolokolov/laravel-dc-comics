@@ -7,10 +7,11 @@
     @vite('resources/js/app.js')
 </head>
 <body>
-
-<div class="container">
+@include('components.nav')
+<div class="wrapper">
     @yield('content')
 </div>
+
 
 </body>
 </html>
