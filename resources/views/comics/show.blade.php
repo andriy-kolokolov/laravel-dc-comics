@@ -2,7 +2,10 @@
 
 @section('content')
     <h1>{{ $comic->title }}</h1>
-    <p>{{ $comic->type }}</p>
-    <h5>Cooking Time: {{ $comic->cooking_time }}</h5>
-    <img src="{{ $comic->src }}" alt="pasta photo">
+    <img src="{{ $comic->thumb }}" alt="comic img">
+    <h5>Price: {{ $comic->price }}</h5>
+    <p>Description: {{ $comic->description }}</p>
+    <p>Series: {{ $comic->series }}</p>
+    <p>Sales date: {{ $comic->sale_date }}</p>
+    <p>Type: {{ $comic->type }}</p>
 @endsection
