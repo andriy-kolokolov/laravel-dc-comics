@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ComicsController;
+use App\Http\Controllers\Admin\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,57 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/comics', [ComicsController::class, 'index'])->name('comics');
-
-Route::get('comics', [ComicsController::class, 'index'])->name('comics.index'); // Index
-
-// Additional routes for CRUD operations:
-Route::get('comics/create', [ComicsController::class, 'create'])->name('comics.create'); // Create
-Route::post('comics', [ComicsController::class, 'store'])->name('comics.store'); // Store
-Route::get('comics/{id}', [ComicsController::class, 'show'])->name('comics.show'); // Show
-Route::get('comics/{id}/edit', [ComicsController::class, 'edit'])->name('comics.edit'); // Edit
-Route::put('comics/{id}', [ComicsController::class, 'update'])->name('comics.update'); // Update
-Route::delete('comics/{id}', [ComicsController::class, 'destroy'])->name('comics.destroy'); // Delete
-
-
 Route::group(['prefix' => ''], function () {
-    Route::get('/characters', function () {
-        return view('other.characters');
-    })->name('characters');
-
-    Route::get('/movies', function () {
-        return view('other.movies');
-    })->name('movies');
-
-    Route::get('/tv', function () {
-        return view('other.tv');
-    })->name('tv');
-
-    Route::get('/games', function () {
-        return view('other.games');
-    })->name('games');
-
-    Route::get('/collectibles', function () {
-        return view('other.collectibles');
-    })->name('collectibles');
-
-    Route::get('/videos', function () {
-        return view('other.videos');
-    })->name('videos');
-
-    Route::get('/fans', function () {
-        return view('other.fans');
-    })->name('fans');
-
-    Route::get('/news', function () {
-        return view('other.news');
-    })->name('news');
-
-    Route::get('/shop', function () {
-        return view('other.shop');
-    })->name('shop');
+    Route::get('/', [PagesController::class, 'home'])->name('home');
+    Route::get('/characters', [PagesController::class, 'characters'])->name('characters');
+    Route::get('/movies', [PagesController::class, 'movies'])->name('movies');
+    Route::get('/tv', [PagesController::class, 'tv'])->name('tv');
+    Route::get('/games', [PagesController::class, 'games'])->name('games');
+    Route::get('/collectibles', [PagesController::class, 'collectibles'])->name('collectibles');
+    Route::get('/videos', [PagesController::class, 'videos'])->name('videos');
+    Route::get('/fans', [PagesController::class, 'fans'])->name('fans');
+    Route::get('/news', [PagesController::class, 'news'])->name('news');
+    Route::get('/shop', [PagesController::class, 'shop'])->name('shop');
 });
+
+Route::resource('comics', ComicsController::class);
+
+

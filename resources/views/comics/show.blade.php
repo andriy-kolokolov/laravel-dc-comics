@@ -4,7 +4,7 @@
     <div class="container text-center d-flex justify-content-between">
         <div class="d-flex align-items-center">
 
-            <a href="{{ route('comics.show', ['id' => $comic->id - 1]) }}"
+            <a href="{{ route('comics.show', ['comic' => $comic->id - 1]) }}"
                class="d-flex align-items-center text-decoration-none fw-bold text-bg-success p-3 rounded-2">
                 <i class="fa-solid fa-caret-left d-flex align-items-center fs-1 me-2"></i>
                 PREVIOUS COMIC
@@ -26,7 +26,7 @@
         </div>
 
         <div class="d-flex align-items-center">
-            <a href="{{ route('comics.show', ['id' => $comic->id + 1]) }}"
+            <a href="{{ route('comics.show', ['comic' => $comic->id + 1]) }}"
                class="d-flex align-items-center text-decoration-none fw-bold text-bg-success p-3 rounded-2">
                 NEXT COMIC
                 <i class="fa-solid fa-caret-right d-flex align-items-center fs-1 ms-2"></i>
